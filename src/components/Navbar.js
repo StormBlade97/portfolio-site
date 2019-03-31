@@ -42,18 +42,13 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <h4 className="title is-3 has-text-weight-bold">TN</h4>
+              <h5 className="title is-5 has-text-weight-bold">TN</h5>
             </Link>
           </div>
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item is-primary" to="/blog">
-                Blog
-              </Link>
-            </div>
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item"

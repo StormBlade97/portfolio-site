@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "tn-portfolio-site",
+  "description": "Thanh Nguyen's portfolio and blog site",
+  "version": "0.0.1",
+  "author": "Thanh Nguyen",
   "dependencies": {
     "bulma": "^0.7.0",
     "gatsby": "^2.1.34",
@@ -31,7 +31,7 @@
     "uuid": "^3.2.1"
   },
   "keywords": [
-    "gatsby"
+    "Thanh Nguyen, gatsby, react, bulma, fullstack-dev, ui designer"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -46,13 +46,21 @@
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1",
     "netlify-lambda": "^1.4.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "@storybook/react": "^5.0.5",
+    "@storybook/addon-actions": "^5.0.5",
+    "@storybook/addon-links": "^5.0.5",
+    "@storybook/addons": "^5.0.5",
+    "@babel/core": "^7.4.0",
+    "babel-loader": "^8.0.5"
   }
 }
