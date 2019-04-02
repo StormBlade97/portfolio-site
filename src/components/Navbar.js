@@ -35,7 +35,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="navbar is-medium is-transparent"
         role="navigation"
         aria-label="main-navigation"
       >
@@ -45,10 +45,7 @@ const Navbar = class extends React.Component {
               <h5 className="title is-5 has-text-weight-bold">TN</h5>
             </Link>
           </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
+          <div id="navMenu" className="navbar-menu">
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item"
@@ -56,9 +53,9 @@ const Navbar = class extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="icon">
+                <i className="icon">
                   <img src={github} alt="Github" />
-                </span>
+                </i>
               </a>
             </div>
           </div>

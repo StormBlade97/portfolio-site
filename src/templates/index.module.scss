@@ -1,4 +1,8 @@
+.heroBody {
+  composes: hero-body from global;
+  padding-bottom: 0rem !important;
+}
 .listSkillLabel {
-  composes: title is-7 from global;
+  composes: title is-size-5 from global;
   margin-bottom: 1rem !important;
 }

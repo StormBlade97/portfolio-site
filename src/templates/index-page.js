@@ -2,57 +2,60 @@ import React from "react";
 import { graphql } from "gatsby";
 import styles from "./index.module.scss";
 import Layout from "../components/Layout";
+import ProjectRoll from "../components/ProjectRoll";
 
 export const IndexPageTemplate = ({ introduction, whoami, mainskills }) => (
-  <section className="section">
-    <div className="container">
-      <section className="hero is-white-bis is-large">
-        <div className="hero-body">
-          <div className="container">
-            <div className="columns is-8">
-              <div className="column is-6">
-                <div className="sub-section">
-                  <p className="title is-1 has-text-weight-bold">{whoami}</p>
-                  <p className="subtitle is-4 has-text-grey-light">
-                    {introduction}
-                  </p>
-                </div>
-                <div className="sub-section">
-                  <p className={styles.listSkillLabel}> SPECIALTIES </p>
-                  <div className="tags">
-                    {mainskills.map((skill, index) => (
-                      <span key={`skill#${index}`} className="tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="sub-section">
-                  <p className={styles.listSkillLabel}> RECENT PROJECTS </p>
-                  <div className="tags">
-                    {mainskills.map((skill, index) => (
-                      <span key={`skill#${index}`} className="tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="column is-6">
-                <div className="is-fullsize">
-                  <img
-                    className="image is-rounded"
-                    src="https://image.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg"
-                    alt="Main illustration"
-                  />
-                </div>
+  <div>
+    <section className="section is-medium">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-6">
+            <div className="sub-section">
+              <p className="title is-1 is-primary has-text-weight-bold">
+                {whoami}
+              </p>
+              <p className="subtitle is-4 has-text-grey-light">
+                {introduction}
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                blandit semper cursus. Ut mattis ipsum nec lobortis convallis.
+                Pellentesque ultricies, nibh sed consectetur semper, diam turpis
+                egestas magna, ac semper erat libero id mauris. In felis diam,
+                viverra at nisi nec, pellentesque euismod magna. In in porttitor
+                nisl, eu pharetra neque. Nulla facilisi. Praesent tempor vel
+                dolor a tristique. Phasellus ut odio neque. Etiam dignissim
+                facilisis nisl nec sodales.
+              </p>
+            </div>
+            <div className="sub-section">
+              <p className={styles.listSkillLabel}> What I'm good at </p>
+              <div className="tags">
+                {mainskills.map((skill, index) => (
+                  <span key={`skill#${index}`} className="tag is-medium">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
+          <div className="column is-6">ss</div>
         </div>
-      </section>
-    </div>
-  </section>
+      </div>
+    </section>
+    <section className="section">
+      <div className="container">
+        <div>
+          <p className={styles.listSkillLabel}>Recent project</p>
+          <ProjectRoll />
+        </div>
+        <div className="sub-section">
+          <p className={styles.listSkillLabel}>Check out my blog</p>
+          <ProjectRoll />
+        </div>
+      </div>
+    </section>
+  </div>
 );
 
 IndexPageTemplate.propTypes = {};

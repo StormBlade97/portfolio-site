@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Navbar from "../components/Navbar";
-import "./all.sass";
+import "./all.scss";
 import useSiteMetadata from "./SiteMetadata";
 
 const TemplateWrapper = ({ children }) => {
@@ -45,6 +45,13 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <div>{children}</div>
+      <footer className="footer">
+        <div className="container">
+          <div class="content">
+            <p>Made by Thanh Nguyen @ Helsinki</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
