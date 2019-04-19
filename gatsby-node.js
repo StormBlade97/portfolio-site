@@ -4,6 +4,8 @@ const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 
 exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -27,6 +29,26 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
+
+    posts.forEach(edge => {
+      const id = edge.node.id;
+      if (edge.node.frontmatter.templateKey === "index-page") {
+        // let's only make page for template now
+
+        createPage({
+          path: edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id
+          }
+        });
+      }
+    });
+
     // Tag pages:
     let tags = [];
     // Iterate through each post, putting all found tags into `tags`
