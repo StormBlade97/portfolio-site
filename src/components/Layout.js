@@ -2,8 +2,11 @@ import React from "react";
 import Helmet from "react-helmet";
 import Navbar from "../components/Navbar";
 import "./all.scss";
-import "boxicons";
 import useSiteMetadata from "./SiteMetadata";
+
+if (typeof window !== "undefined") {
+  require("boxicons");
+}
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
