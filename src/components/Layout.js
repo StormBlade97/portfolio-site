@@ -1,16 +1,17 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React from "react";
+import Helmet from "react-helmet";
+import Navbar from "../components/Navbar";
+import "./all.scss";
+import "boxicons";
+import useSiteMetadata from "./SiteMetadata";
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+  const { title, description } = useSiteMetadata();
+
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="en" class="has-navbar-fixed-top" />
         <title>{title}</title>
         <meta name="description" content={description} />
 
@@ -31,7 +32,6 @@ const TemplateWrapper = ({ children }) => {
           href="/img/favicon-16x16.png"
           sizes="16x16"
         />
-
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
@@ -46,9 +46,16 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <div>{children}</div>
-      <Footer />
+      <footer className="footer has-background-primary">
+        <div className="container">
+          <div className="content">
+            <strong>Made by Thanh Nguyen @ Helsinki</strong>
+            <p>With love --</p>
+          </div>
+        </div>
+      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;

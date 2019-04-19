@@ -1,0 +1,48 @@
+.sub-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.is-rounded {
+  border-radius: 8px;
+}
+
+.is-fullsize {
+  width: 100%;
+  height: 100%;
+}
+
+.container > .section {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.is-position-relative {
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.has-fadein-effect {
+  animation: fadeIn 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+.has-radius {
+  border-radius: 0.5rem !important;
+}
+.has-powerful-ease-in {
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* variables */
+$primary: #ffd740;
+
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/boxicons/css/boxicons.min.css";

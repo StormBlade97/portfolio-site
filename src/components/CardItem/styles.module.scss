@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  composes: box from global;
+}
+.titleSection {
+  & p {
+    margin-bottom: 0.25rem !important;
+  }
+  & div {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.tagSection {
+  margin-top: 1rem;
+}

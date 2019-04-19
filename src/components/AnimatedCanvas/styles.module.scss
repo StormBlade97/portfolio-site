@@ -1,0 +1,23 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.canvasOverride {
+  width: 100%;
+  height: 100%;
+  & canvas:first-child {
+    display: none;
+  }
+  & canvas:last-child {
+    position: static !important;
+    width: 100% !important;
+    height: 100% !important;
+    animation: fadeIn 500ms ease both;
+    z-index: -1 !important;
+  }
+}

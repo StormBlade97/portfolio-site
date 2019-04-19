@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -35,58 +33,69 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+              <h5 className="title is-2 has-text-weight-bold">TN</h5>
             </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
           </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
+          <div id="navMenu" className="navbar-menu">
             <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+              <div className="navbar-item">
+                <div className="buttons">
+                  <a
+                    href="https://github.com/stormblade97"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button is-rounded is-light"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxl-github" />
+                    </span>
+                  </a>
+
+                  <a
+                    className="button is-rounded is-light"
+                    href="mailto:nguyendaithanh0612@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxs-envelope" />
+                    </span>
+                  </a>
+                  <a
+                    className="button is-rounded is-light"
+                    href="https://www.linkedin.com/in/thanhng-97"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxl-linkedin" />
+                    </span>
+                  </a>
+                  <a
+                    className="button is-rounded is-light"
+                    href="https://twitter.com/CodesDog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxl-twitter" />
+                    </span>
+                  </a>
+                  <a className="button is-primary is-rounded has-text-weight-bold has-text-black">
+                    <span>Get my CV</span>
+                    <span className="icon is-size-4">
+                      <i className="bx bxs-download" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
