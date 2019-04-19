@@ -2,15 +2,24 @@
   position: relative;
   composes: box from global;
 }
-.titleSection {
-  & p {
-    margin-bottom: 0.25rem !important;
-  }
-  & div {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
 .tagSection {
   margin-top: 1rem;
+}
+.head {
+  margin-bottom: 1.5rem;
+}
+.titleContainer {
+  margin-left: 1rem;
+  flex-shrink: 1 !important;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > * {
+    flex-shrink: 1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+.company {
+  margin-left: 1rem !important;
 }

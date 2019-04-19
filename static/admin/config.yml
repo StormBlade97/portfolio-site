@@ -41,6 +41,7 @@ collections:
           - { label: GreetingLine, name: greetingLine, widget: text }
           - { label: Who am I, name: whoami, widget: text }
           - { label: Introduction, name: introduction, widget: text }
+          - { label: Mobile cover art, name: image, widget: image }
           - label: Skills
             name: mainskills
             widget: list

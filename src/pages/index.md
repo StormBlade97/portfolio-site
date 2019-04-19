@@ -15,5 +15,5 @@ mainskills:
   - Javascript
   - Ruby
   - AWS
-image: /img/coax_developer.png
+image: /img/mobile-decoration.png
 ---
