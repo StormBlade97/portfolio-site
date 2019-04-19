@@ -33,7 +33,8 @@ ProjectList.propsType = {
     thumbnail: PropType.string,
     id: PropType.string,
     description: PropType.string,
-    icon: PropType.string
+    icon: PropType.string,
+    company: PropType.string
   })
 };
 
@@ -51,6 +52,7 @@ export default props => {
               tags
               description
               icon
+              company
             }
             id
           }
@@ -63,7 +65,8 @@ export default props => {
       title: node.node.frontmatter.title,
       tags: node.node.frontmatter.tags,
       description: node.node.frontmatter.description,
-      icon: node.node.frontmatter.icon
+      icon: node.node.frontmatter.icon,
+      company: node.node.frontmatter.company
     };
   });
   return <ProjectList list={list} />;
