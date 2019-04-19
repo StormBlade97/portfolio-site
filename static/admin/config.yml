@@ -8,7 +8,7 @@ public_folder: /img
 collections:
   - name: "project"
     label: "Projects"
-    folder: "src/pages/projects"
+    folder: "src/projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -19,6 +19,7 @@ collections:
           default: "project-post",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Company", name: "company", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -45,4 +46,3 @@ collections:
           - label: Skills
             name: mainskills
             widget: list
-            field: { label: Label, name: skillName, widget: string }

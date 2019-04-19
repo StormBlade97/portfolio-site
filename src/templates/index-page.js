@@ -37,11 +37,15 @@ export const IndexPageTemplate = ({
             </div>
             <div className="sub-section">
               <div className={styles.skillPills}>
-                {mainskills.map(skill => (
-                  <span key={skill} className="tag is-medium is-rounded">
-                    {skill}
-                  </span>
-                ))}
+                {mainskills && mainskills.length > 0 ? (
+                  mainskills.map(skill => (
+                    <span key={skill} className="tag is-medium is-rounded">
+                      {skill}
+                    </span>
+                  ))
+                ) : (
+                  <p>No skill yet</p>
+                )}
               </div>
             </div>
           </div>
