@@ -7,14 +7,15 @@ import styles from "./styles.module.scss";
 
 export const IndexPageTemplate = ({
   introduction,
+  greetingLine,
   whoami,
   mainskills,
-  title
+  image
 }) => (
   <div>
-    <div className="section is-position-relative is-large">
+    <div className="section is-position-relative is-large is-hidden-touch">
       <div className="columns is-overlay" style={{ zIndex: -1 }}>
-        <div className="column is-4 is-offset-6">
+        <div className="column is-4-fullhd is-6 is-offset-6">
           <AnimatedCanvas />
         </div>
       </div>
@@ -22,22 +23,17 @@ export const IndexPageTemplate = ({
         <div className="columns">
           <div className="column is-6">
             <div className="sub-section">
-              <p className="subtitle is-5 has-text-grey-dark">
-                Hello there, It's great to see you!
-              </p>
+              <p className="subtitle is-5 has-text-grey-dark">{greetingLine}</p>
             </div>
             <div className="sub-section has-text-grey-dark">
-              <p className="has-text-weight-medium is-size-4">
-                I'm Thanh Nguyen, and I'm a
-              </p>
+              <p className="has-text-weight-medium is-size-4">{whoami}</p>
               <p className="title is-1 is-marginless has-text-black-bis">
                 Full Stack Developer
               </p>
               <p className="title is-1">
                 and a <span className="has-text-primary">UI Designer</span>
               </p>
-              <p>I craft nice web applications for people and businesses.</p>
-              <p>And i'm pretty good at</p>
+              <p>{introduction}</p>
             </div>
             <div className="sub-section">
               <div className={styles.skillPills}>
@@ -48,6 +44,41 @@ export const IndexPageTemplate = ({
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="section is-hidden-desktop"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+        backgroundRepeat: `no-repeat`,
+        backgroundPosition: `45vw -50vh`
+      }}
+    >
+      <div className="container">
+        <div className="sub-section">
+          <p className="subtitle is-5 has-text-grey-dark">{greetingLine}</p>
+        </div>
+        <div className="sub-section has-text-grey-dark">
+          <p className="has-text-weight-medium is-size-4">{whoami}</p>
+          <p className="title is-1 is-marginless has-text-black-bis">
+            Full Stack Developer
+          </p>
+          <p className="title is-1">
+            & <span className="has-text-primary">UI Designer</span>
+          </p>
+          <p>{introduction}</p>
+        </div>
+        <div className="sub-section">
+          <div className={styles.skillPills}>
+            {mainskills.map(skill => (
+              <span key={skill} className="tag is-medium is-rounded">
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -71,7 +102,8 @@ const IndexPage = ({ data }) => {
         whoami={frontmatter.whoami}
         introduction={frontmatter.introduction}
         mainskills={frontmatter.mainskills}
-        title={frontmatter.title}
+        greetingLine={frontmatter.greetingLine}
+        image={frontmatter.image}
       />
     </Layout>
   );
@@ -88,7 +120,14 @@ export const pageQuery = graphql`
         whoami
         introduction
         mainskills
-        title
+        greetingLine
+        image {
+          childImageSharp {
+            fluid(maxWidth: 990, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

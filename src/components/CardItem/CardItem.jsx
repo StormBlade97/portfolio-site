@@ -6,20 +6,22 @@ import cn from "classnames";
 const CardItem = ({ data, className }) => {
   return (
     <div className={cn(styles.container, "has-radius", className)}>
-      <div className="level">
-        <div className="level-left">
-          <div className="has-padding-3">
-            <img src={data.icon} alt="s" className="image is-48x48" />
-          </div>
-        </div>
-        <div className="level-right">
-          <div className={styles.titleSection}>
-            <p className="title is-5">{data.title}</p>
-            <div>
-              <span className="tag is-dark is-rounded has-text-weight-bold">
-                @ Zalando
-              </span>
+      <div className={styles.head}>
+        <div className="level is-marginless">
+          <div className="level-left">
+            <div className="has-padding-3">
+              <img src={data.icon} alt="s" className="image is-48x48" />
             </div>
+          </div>
+          <div className={cn("level-right is-right", styles.titleContainer)}>
+            <p className="title is-5">{data.title}</p>
+            {data.company && (
+              <div className={styles.company}>
+                <span className="tag is-dark is-rounded has-text-weight-bold">
+                  {data.company}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -47,7 +49,8 @@ CardItem.propTypes = {
     thumbnail: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
-    tags: PropTypes.array
+    tags: PropTypes.array,
+    company: PropTypes.string
   })
 };
 
