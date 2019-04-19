@@ -1,6 +1,6 @@
 import React from "react";
 import PropType from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 import styles from "./styles.module.scss";
 import Card from "../CardItem";
 
@@ -38,36 +38,40 @@ ProjectList.propsType = {
   })
 };
 
-export default props => {
-  const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "project-post" } } }
-      ) {
-        totalCount
-        edges {
-          node {
-            frontmatter {
-              title
-              tags
-              description
-              icon
-              company
+export default props => (
+  <StaticQuery
+    query={graphql`
+      {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "project-post" } } }
+        ) {
+          totalCount
+          edges {
+            node {
+              frontmatter {
+                title
+                tags
+                description
+                icon
+                company
+              }
+              id
             }
-            id
           }
         }
       }
-    }
-  `);
-  const list = data.allMarkdownRemark.edges.map(node => {
-    return {
-      title: node.node.frontmatter.title,
-      tags: node.node.frontmatter.tags,
-      description: node.node.frontmatter.description,
-      icon: node.node.frontmatter.icon,
-      company: node.node.frontmatter.company
-    };
-  });
-  return <ProjectList list={list} />;
-};
+    `}
+    render={data => {
+      const list = data.allMarkdownRemark.edges.map(node => {
+        return {
+          title: node.node.frontmatter.title,
+          tags: node.node.frontmatter.tags,
+          description: node.node.frontmatter.description,
+          icon: node.node.frontmatter.icon,
+          company: node.node.frontmatter.company
+        };
+      });
+      return <ProjectList list={list} />;
+    }}
+  />
+);
