@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -35,28 +33,69 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-medium is-transparent"
+        className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <h5 className="title is-5 has-text-weight-bold">TN</h5>
+              <h5 className="title is-2 has-text-weight-bold">TN</h5>
             </Link>
           </div>
           <div id="navMenu" className="navbar-menu">
             <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/stormblade97"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="icon">
-                  <img src={github} alt="Github" />
-                </i>
-              </a>
+              <div className="navbar-item">
+                <div className="buttons">
+                  <a
+                    href="https://github.com/stormblade97"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button is-rounded is-light"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxl-github" />
+                    </span>
+                  </a>
+
+                  <a
+                    className="button is-rounded is-light"
+                    href="mailto:nguyendaithanh0612@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxs-envelope" />
+                    </span>
+                  </a>
+                  <a
+                    className="button is-rounded is-light"
+                    href="https://www.linkedin.com/in/thanhng-97"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxl-linkedin" />
+                    </span>
+                  </a>
+                  <a
+                    className="button is-rounded is-light"
+                    href="https://twitter.com/CodesDog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="icon is-size-4">
+                      <i className="bx bxl-twitter" />
+                    </span>
+                  </a>
+                  <a className="button is-primary is-rounded has-text-weight-bold has-text-black">
+                    <span>Get my CV</span>
+                    <span className="icon is-size-4">
+                      <i className="bx bxs-download" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

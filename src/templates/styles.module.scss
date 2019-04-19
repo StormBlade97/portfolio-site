@@ -6,3 +6,7 @@
   composes: title is-size-5 from global;
   margin-bottom: 1rem !important;
 }
+.skillPills {
+  composes: tags from global;
+  margin: -0.25rem;
+}

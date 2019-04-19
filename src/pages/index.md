@@ -2,7 +2,8 @@
 templateKey: index-page
 greetingLine: Hello
 whoami: I'm Thanh Nguyen
-introduction: Full stack developer • UI designer @ Zalando SE, Finland
+title: Full stack developer • UI designer @ Zalando SE, Finland
+introduction: A curious developer who always strives to deliver astonding result. Is an all-rounder capable of streamlining the whole proccess from design to working on a complex microservice stack on the cloud.
 mainskills:
   - React
   - Redux
@@ -14,5 +15,5 @@ mainskills:
   - Javascript
   - Ruby
   - AWS
-image: /img/products-full-width.jpg
+image: /img/coax_developer.png
 ---

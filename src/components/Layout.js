@@ -2,14 +2,16 @@ import React from "react";
 import Helmet from "react-helmet";
 import Navbar from "../components/Navbar";
 import "./all.scss";
+import "boxicons";
 import useSiteMetadata from "./SiteMetadata";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
+
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="en" class="has-navbar-fixed-top" />
         <title>{title}</title>
         <meta name="description" content={description} />
 
@@ -30,7 +32,6 @@ const TemplateWrapper = ({ children }) => {
           href="/img/favicon-16x16.png"
           sizes="16x16"
         />
-
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
@@ -45,10 +46,11 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <div>{children}</div>
-      <footer className="footer">
+      <footer className="footer has-background-primary">
         <div className="container">
-          <div class="content">
-            <p>Made by Thanh Nguyen @ Helsinki</p>
+          <div className="content">
+            <strong>Made by Thanh Nguyen @ Helsinki</strong>
+            <p>With love --</p>
           </div>
         </div>
       </footer>
