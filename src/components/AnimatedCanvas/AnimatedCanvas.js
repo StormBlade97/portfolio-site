@@ -6,7 +6,8 @@ const Canvas = props => {
   React.useEffect(() => {
     let effect;
     try {
-      if (window.VANTA) {
+      if (window.VANTA && window.screen.width > 991) {
+        // don't run effect on mobile
         console.info("Launching effect");
         effect = window.VANTA.TRUNK({
           el: "#animatedCanvas",
