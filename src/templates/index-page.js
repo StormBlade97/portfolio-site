@@ -34,7 +34,7 @@ export const IndexPageTemplate = ({
                 Full Stack Developer
               </p>
               <p className="title is-1">
-                and an <span className="has-text-primary">UI Designer</span>
+                and a <span className="has-text-primary">UI Designer</span>
               </p>
               <p>I craft nice web applications for people and businesses.</p>
               <p>And i'm pretty good at</p>
