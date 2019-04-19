@@ -10,7 +10,7 @@ const Canvas = props => {
         console.info("Launching effect");
         effect = window.VANTA.TRUNK({
           el: "#animatedCanvas",
-          color: "#ffd740",
+          color: "#A3A3A3",
           backgroundColor: 0xffffff
         });
       }

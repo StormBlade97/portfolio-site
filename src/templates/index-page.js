@@ -12,9 +12,9 @@ export const IndexPageTemplate = ({
   title
 }) => (
   <div>
-    <div className="section is-position-relative is-medium">
+    <div className="section is-position-relative is-large">
       <div className="columns is-overlay" style={{ zIndex: -1 }}>
-        <div className="column is-6 is-offset-6">
+        <div className="column is-4 is-offset-6">
           <AnimatedCanvas />
         </div>
       </div>
