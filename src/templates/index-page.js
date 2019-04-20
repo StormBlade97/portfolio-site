@@ -89,7 +89,10 @@ export const IndexPageTemplate = ({
     </div>
     <div className="section has-background-primary">
       <div className="container">
-        <p className="title is-4">Selected work</p>
+        <p className="title is-3">Projects</p>
+        <p className="subtitle is-4 has-text-grey-dark">
+          Work I'm really proud of, and shows what I'm capable of
+        </p>
         <Roll />
       </div>
     </div>

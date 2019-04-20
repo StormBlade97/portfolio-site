@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 class Canvas extends React.Component {
   effect = undefined;
-  componentWillMount() {
+  componentDidMount() {
     try {
       if (window.VANTA && window.screen.width > 991) {
         // don't run effect on mobile
