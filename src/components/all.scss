@@ -1,9 +1,15 @@
+/* variables */
+$primary: #ffd740;
+
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/boxicons/css/boxicons.min.css";
+
 .sub-section {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.is-rounded {
+.has-corner-rounded {
   border-radius: 8px;
 }
 
@@ -19,6 +25,12 @@
 
 .is-position-relative {
   position: relative;
+}
+.is-aligned-end {
+  align-self: flex-end;
+}
+.is-justify-space-between {
+  justify-content: space-between !important;
 }
 
 @keyframes fadeIn {
@@ -40,9 +52,36 @@
 .has-powerful-ease-in {
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+@keyframes shine {
+  0% {
+    background-position: -100px;
+  }
+  100% {
+    background-position: 140px;
+  }
+}
 
-/* variables */
-$primary: #ffd740;
+$base-color: transparent;
+$shine-color: rgba(255, 255, 255, 0.8);
 
-@import "../../node_modules/bulma/bulma.sass";
-@import "../../node_modules/boxicons/css/boxicons.min.css";
+.shiny-button {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background-image: linear-gradient(
+      90deg,
+      $base-color 0px,
+      $shine-color 40px,
+      $base-color 80px
+    );
+    background-size: 600px;
+    animation-delay: 3s;
+    animation: shine 1s cubic-bezier(0.075, 0.82, 0.165, 1) 5 both;
+  }
+}

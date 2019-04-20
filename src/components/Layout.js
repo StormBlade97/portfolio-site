@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import Navbar from "../components/Navbar";
 import "./all.scss";
 import useSiteMetadata from "./SiteMetadata";
+import Footer from "./Footer";
 
 if (typeof window !== "undefined") {
   require("boxicons");
@@ -49,14 +50,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <div>{children}</div>
-      <footer className="footer has-background-primary">
-        <div className="container">
-          <div className="content">
-            <strong>Made by Thanh Nguyen @ Helsinki</strong>
-            <p>With love --</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

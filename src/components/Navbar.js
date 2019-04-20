@@ -33,60 +33,61 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-fixed-top has-shadow"
+        className="navbar is-fixed-top is-spaced has-shadow"
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div className="navbar-brand">
+        <div className="container is-fullhd">
+          <div className="navbar-brand is-justify-space-between">
             <Link to="/" className="navbar-item" title="Logo">
-              <h5 className="title is-3 has-text-weight-bold">TN</h5>
+              <h5 className="title is-4 has-text-weight-bold">TN</h5>
             </Link>
-            <a
-              href="https://github.com/stormblade97"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="is-hidden-desktop navbar-item"
-            >
-              <span className="icon is-size-4">
-                <i className="bx bxl-github" />
-              </span>
-            </a>
-
-            <a
-              className="is-hidden-desktop navbar-item"
-              href="mailto:nguyendaithanh0612@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon is-size-4 has-text-danger">
-                <i className="bx bxs-envelope" />
-              </span>
-            </a>
-            <a
-              className="is-hidden-desktop navbar-item"
-              href="https://www.linkedin.com/in/thanhng-97"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon is-size-4 has-text-info">
-                <i className="bx bxl-linkedin" />
-              </span>
-            </a>
-            <a
-              className="is-hidden-desktop navbar-item has-text-link"
-              href="https://twitter.com/CodesDog"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon is-size-4">
-                <i className="bx bxl-twitter" />
-              </span>
-            </a>
-            <div className="is-hidden-desktop navbar-item">
-              <button className="button is-rounded is-primary has-text-black">
-                <span>Get my CV</span>
-              </button>
+            <div className="navbar-item is-hidden-desktop">
+              <a
+                href="https://github.com/stormblade97"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-item"
+              >
+                <span className="icon is-size-5">
+                  <i className="bx bxl-github" />
+                </span>
+              </a>
+              <a
+                className="navbar-item"
+                href="mailto:nguyendaithanh0612@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon is-size-5">
+                  <i className="bx bxs-envelope" />
+                </span>
+              </a>
+              <a
+                className="navbar-item"
+                href="https://www.linkedin.com/in/thanhng-97"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon is-size-5">
+                  <i className="bx bxl-linkedin" />
+                </span>
+              </a>
+              <a
+                className="navbar-item"
+                href="https://twitter.com/CodesDog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon is-size-5">
+                  <i className="bx bxl-twitter" />
+                </span>
+              </a>
+              <div className="navbar-item is-hidden-desktop">
+                <button className="button is-rounded is-primary has-text-black has-text-weight-bold shiny-button">
+                  <strong>Get my CV</strong>
+                </button>
+              </div>
             </div>
           </div>
           <div id="navMenu" className="navbar-menu">
@@ -134,7 +135,7 @@ const Navbar = class extends React.Component {
                       <i className="bx bxl-twitter" />
                     </span>
                   </a>
-                  <a className="button is-primary is-rounded has-text-weight-bold has-text-black">
+                  <a className="button is-primary is-rounded has-text-weight-bold has-text-black shiny-button">
                     <span>Get my CV</span>
                     <span className="icon is-size-4">
                       <i className="bx bxs-download" />

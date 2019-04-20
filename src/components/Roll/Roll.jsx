@@ -32,9 +32,13 @@ ProjectList.propsType = {
     title: PropType.string,
     thumbnail: PropType.string,
     id: PropType.string,
-    description: PropType.string,
     icon: PropType.string,
-    company: PropType.string
+    company: PropType.string,
+    content: PropType.element,
+    projectTime: PropType.shape({
+      startTime: PropType.string,
+      endTime: PropType.string
+    })
   })
 };
 
@@ -51,11 +55,13 @@ export default props => (
               frontmatter {
                 title
                 tags
-                description
                 icon
                 company
+                projectStartDate
+                projectEndDate
               }
               id
+              html
             }
           }
         }
@@ -66,9 +72,13 @@ export default props => (
         return {
           title: node.node.frontmatter.title,
           tags: node.node.frontmatter.tags,
-          description: node.node.frontmatter.description,
           icon: node.node.frontmatter.icon,
-          company: node.node.frontmatter.company
+          company: node.node.frontmatter.company,
+          content: node.node.html,
+          projectTime: {
+            startTime: node.node.frontmatter.projectStartDate,
+            endTime: node.node.frontmatter.projectEndDate
+          }
         };
       });
       return <ProjectList list={list} />;
