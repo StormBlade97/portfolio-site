@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: Zalando's performance rating system - ZONAR
+title: ZONAR
 company: '@Zalando SE, Finland'
 date: 2019-04-19T18:08:55.289Z
 description: >-
