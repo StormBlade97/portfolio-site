@@ -21,8 +21,9 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Start time", name: "projectStartTime", widget: "datetime" }
+      - { label: "End time", name: "projectEndTime", widget: "datetime" }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Icon", name: "icon", widget: "string" }
 
